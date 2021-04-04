@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="p-3 mb-2 text-success">Products</h1>
+<div class="row m-3">
+  {% for product in products %}
+  <div class="col mb-4">
+    <div class="card" style="width: 18rem">
+      <img
+        src="{{product.image_url}}"
+        class="card-img-top"
+        alt="..."
+        style="width: 100%; height: 20rem; object-fit: fill"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">Price: ${{product.price}}</p>
+        <p class="card-text">Stock: {{product.stock}}</p>
+        <a href="#" class="btn btn-primary d-flex justify-content-center"
+          >Add to Cart</a
+        >
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
